@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
 		$this->call([
             CentroSeeder::class,
             AreaAtencionSeeder::class,
+            PermissionTableSeeder::class,
+            CreateAdminUserSeeder::class,
         ]);
     }
 }

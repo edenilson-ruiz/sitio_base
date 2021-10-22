@@ -23,7 +23,7 @@ class Centros extends Component
 						->orWhere('codigo', 'LIKE', $keyWord)
 						->orWhere('codcent', 'LIKE', $keyWord)
 						->orWhere('direccion', 'LIKE', $keyWord)
-						->paginate(10),
+						->paginate(5),
         ]);
     }
 
