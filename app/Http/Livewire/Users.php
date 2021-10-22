@@ -10,15 +10,18 @@ use Livewire\Component;
 use Illuminate\Support\Arr;
 use Livewire\WithPagination;
 use Spatie\Permission\Models\Role;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Users extends Component
 {
     use WithPagination;
+    use AuthorizesRequests;
 
 	protected $paginationTheme = 'bootstrap';
     public $selected_id, $keyWord, $name, $email, $password, $confirmPassword;
     public $updateMode = false;
     public $rolesUsuario = [];
+
 
     public function render()
     {

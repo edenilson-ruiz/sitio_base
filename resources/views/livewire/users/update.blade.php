@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
        <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar Usuario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span wire:click.prevent="cancel()" aria-hidden="true">×</span>
                 </button>
@@ -28,7 +28,7 @@
                         <input wire:model.lazy="confirmPassword" type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Password">@error('email') <span class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="rolesUsuario">Centros de Atención</label>
+                        <label for="rolesUsuario">Roles</label>
                         <select  wire:model.lazy="rolesUsuario" name="rolesUsuario[]" id="rolesUsuario" class="form-control selectpicker"  data-style="btn-default" multiple title="Seleccione una o varias">
                             @foreach($roles as $rol)
                             <option value="{{ $rol->id }}">{{ $rol->name }}</option>
@@ -40,8 +40,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" wire:click.prevent="update()" class="btn btn-primary" data-dismiss="modal">Save</button>
+                <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" wire:click.prevent="update()" class="btn btn-primary" data-dismiss="modal">Actualizar</button>
             </div>
        </div>
     </div>

@@ -67,7 +67,7 @@
                                             class="fas fa-hand-holding-medical"></i> Areas de Atención</a>
                                 @endcan
                                 @can('role-list')
-                                    <a href="{{ url('/roles') }}" class="dropdown-item"><i class="fas fa-users"></i>
+                                    <a href="{{ url('/roles') }}" class="dropdown-item"><i class="fas fa-user-tag"></i>
                                         Roles</a>
                                 @endcan
                                 @can('user-list')

@@ -15,6 +15,7 @@ class Genero extends Model
     public $incrementing = false;
 
     protected $primaryKey = 'id'; // or null
+    protected $keyType = 'string';
 
     protected $fillable = ['id','nombre'];
 

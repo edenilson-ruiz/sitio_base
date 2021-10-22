@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create New User</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Crear Nuevo Usuario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true close-btn">×</span>
                 </button>
@@ -27,7 +27,7 @@
                 <input wire:model.lazy="confirmPassword" type="password" class="form-control" placeholder="Confirmar Password">@error('confirmPassword') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="rolesUsuario">Centros de Atención</label>
+                <label for="rolesUsuario">Roles</label>
                 <select  wire:model.lazy="rolesUsuario" name="rolesUsuario[]" class="form-control selectpicker"  data-style="btn-default" multiple title="Seleccione una o varias">
                     @foreach($roles as $rol)
                     <option value="{{ $rol->id }}">{{ $rol->name }}</option>

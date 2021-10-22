@@ -25,11 +25,13 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route Hooks - Do not delete//
-Route::view('users', 'livewire.users.index')->middleware('auth');
-Route::group(['middleware' => ['auth']], function() {
 
-    //Route::resource('users', UserController::class);
-    Route::resource('roles', RoleController::class);
+Route::group(['middleware' => ['auth','role:super-admin']], function() {
+
+    // Route::resource('users', UserController::class);
+    // Route::resource('roles', RoleController::class);
+    Route::view('roles', 'livewire.roles.index');
+    Route::view('users', 'livewire.users.index');
     Route::view('generos', 'livewire.generos.index');
     Route::view('areas_atencion', 'livewire.areas_atencion.index');
     Route::view('centros', 'livewire.centros.index');
