@@ -41,9 +41,6 @@
                 @auth()
                     <ul class="navbar-nav mr-auto">
                         <!--Nav Bar Hooks - Do not delete!!-->
-						<li class="nav-item">
-                            <a href="{{ url('/users') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Users</a>
-                        </li>
                         <li class="nav-item">
 
                         </li>
@@ -73,6 +70,10 @@
                                 @can('user-list')
                                     <a href="{{ url('/users') }}" class="dropdown-item"><i class="fas fa-users"></i>
                                         Usuarios</a>
+                                @endcan
+                                @can('empleado-list')
+                                    <a href="{{ url('/empleados') }}" class="dropdown-item"><i class="fas fa-users"></i>
+                                        Empleados</a>
                                 @endcan
                                 @can('genero-list')
                                     <a href="{{ url('/generos') }}" class="dropdown-item"><i

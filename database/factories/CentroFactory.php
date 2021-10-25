@@ -13,10 +13,10 @@ class CentroFactory extends Factory
     public function definition()
     {
         return [
-			'centro_nombre' => $this->faker->name,
-			'centro_codigo' => $this->faker->name,
-			'centro_codcent' => $this->faker->name,
-			'centro_direccion' => $this->faker->name,
+			'nombre' => $this->faker->name,
+			'codigo' => $this->faker->name,
+			'codcent' => $this->faker->name,
+			'direccion' => $this->faker->name,
         ];
     }
 }

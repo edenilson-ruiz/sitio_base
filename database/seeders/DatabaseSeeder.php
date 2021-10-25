@@ -30,6 +30,12 @@ class DatabaseSeeder extends Seeder
             AreaAtencionSeeder::class,
             PermissionTableSeeder::class,
             CreateAdminUserSeeder::class,
+            CargoSeeder::class,
+            ProfesionSeeder::class,
+            EmpleadoSeeder::class,
         ]);
+
+        // \App\Models\Cargo::factory(10)->create();
+        // \App\Models\Profesion::factory(10)->create();
     }
 }

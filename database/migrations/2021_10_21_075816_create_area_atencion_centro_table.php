@@ -35,6 +35,6 @@ class CreateAreaAtencionCentroTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('centro_area_atencion');
+        Schema::dropIfExists('area_atencion_centro');
     }
 }
