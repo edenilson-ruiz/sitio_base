@@ -9,10 +9,8 @@
 							<h4><i class="fas fa-hand-holding-medical"></i> Areas de Atención </h4>
 						</div>
 						<div class="col-sm-5">
+                            @include('flash-message')
 						</div>
-						@if (session()->has('message'))
-						<div wire:poll.4s class="btn btn-sm btn-success" style="margin-top:0px; margin-bottom:0px;"> {{ session('message') }} </div>
-						@endif
 						<div>
 							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Buscar Area de Atención">
 						</div>
@@ -31,6 +29,7 @@
 							<tr>
 								<td>#</td>
 								<th>Nombre</th>
+								<th>Tiempo de Atención</th>
 								<th>Descripcion</th>
 								<td>Acciones</td>
 							</tr>
@@ -40,6 +39,7 @@
 							<tr>
 								<td>{{ $row->id }}</td>
 								<td>{{ $row->nombre }}</td>
+								<td>{{ $row->tiempo_atencion_min }}</td>
 								<td>{{ $row->descripcion }}</td>
 								<td width="90">
 								<div class="btn-group">

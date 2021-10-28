@@ -12,7 +12,7 @@ class AreasAtencion extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $nombre, $descripcion;
+    public $selected_id, $keyWord, $nombre, $descripcion, $tiempo_atencion_min;
     public $updateMode = false;
 
     public $centrosAtencion = [];
@@ -40,25 +40,28 @@ class AreasAtencion extends Component
 		$this->nombre = null;
 		$this->descripcion = null;
         $this->centrosAtencion = null;
+        $this->tiempo_atencion_min = null;
     }
 
     public function store()
     {
         $this->validate([
 		'nombre' => 'required',
+        'tiempo_atencion_min' => 'required',
         'centrosAtencion' => 'required',
         ]);
 
         $area_atencion = AreaAtencion::create([
 			'nombre' => $this-> nombre,
-			'descripcion' => $this-> descripcion
+			'descripcion' => $this-> descripcion,
+            'tiempo_atencion_min' => $this-> tiempo_atencion_min,
         ]);
 
         $area_atencion->centros()->sync($this->centrosAtencion);
 
         $this->resetInput();
 		$this->emit('closeModal');
-		session()->flash('message', 'AreasAtencion Successfully created.');
+		session()->flash('success', 'AreasAtencion Successfully created.');
 
 
     }
@@ -70,6 +73,7 @@ class AreasAtencion extends Component
         $this->selected_id = $id;
 		$this->nombre = $record-> nombre;
 		$this->descripcion = $record-> descripcion;
+		$this->tiempo_atencion_min = $record-> tiempo_atencion_min;
 
         $this->centrosAtencion = $record->centros()->pluck('centros.id');
 
@@ -80,20 +84,22 @@ class AreasAtencion extends Component
     {
         $this->validate([
 		'nombre' => 'required',
+        'tiempo_atencion_min' => 'required',
         ]);
 
         if ($this->selected_id) {
 			$record = AreaAtencion::find($this->selected_id);
             $record->update([
 			'nombre' => $this-> nombre,
-			'descripcion' => $this-> descripcion
+			'descripcion' => $this-> descripcion,
+            'tiempo_atencion_min' => $this-> tiempo_atencion_min,
             ]);
 
             $record->centros()->sync($this->centrosAtencion);
 
             $this->resetInput();
             $this->updateMode = false;
-			session()->flash('message', 'AreasAtencion Successfully updated.');
+			session()->flash('success', 'AreasAtencion Successfully updated.');
         }
     }
 

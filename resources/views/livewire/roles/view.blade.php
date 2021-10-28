@@ -26,12 +26,12 @@
 						@include('livewire.roles.create')
 						@include('livewire.roles.update')
 				<div class="table-responsive">
-					<table class="table table-bordered table-sm">
+					<table class="table table-striped">
 						<thead class="thead">
 							<tr>
-								<td>#</td>
+								<th>#</th>
 								<th>Nombre</th>
-								<td>Acciones</td>
+								<th>Acciones</th>
 							</tr>
 						</thead>
 						<tbody>

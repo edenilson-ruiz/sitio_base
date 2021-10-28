@@ -23,7 +23,7 @@ class Centros extends Component
 						->orWhere('codigo', 'LIKE', $keyWord)
 						->orWhere('codcent', 'LIKE', $keyWord)
 						->orWhere('direccion', 'LIKE', $keyWord)
-						->paginate(5),
+						->paginate(10),
         ]);
     }
 
@@ -58,7 +58,9 @@ class Centros extends Component
 
         $this->resetInput();
 		$this->emit('closeModal');
-		session()->flash('message', 'Centro Successfully created.');
+        session()->flash('success','Centro created successfully!');
+		//session()->flash('message', 'Centro Successfully created.');
+
     }
 
     public function edit($id)

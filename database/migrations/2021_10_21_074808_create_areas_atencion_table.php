@@ -16,6 +16,7 @@ class CreateAreasAtencionTable extends Migration
         Schema::create('areas_atencion', function (Blueprint $table) {
             $table->id();
             $table->string('nombre',50);
+            $table->integer('tiempo_atencion_min')->nullable();
             $table->string('descripcion',100)->nullable();
             $table->timestamps();
         });

@@ -11,7 +11,7 @@ class AreaAtencion extends Model
 
     protected $table = 'areas_atencion';
 
-    protected $fillable = ['nombre','descripcion'];
+    protected $fillable = ['nombre','descripcion','tiempo_atencion_min'];
 
     public function centros()
     {
